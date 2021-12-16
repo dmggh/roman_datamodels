@@ -40,13 +40,13 @@ same name.
 As an alternative to creating a model by initializing an object of the
 specific class, you can call the open function, which is in
 util.py. This function takes the same arguments as the __init_
-method. If it is called with the name of aa ASDF file, it looks in the
+method. If it is called with the name of an ASDF file, it looks in the
 metadata for a attribute named datamodel that contains the name of
 the class to use to open the model. If that attribute is not found,
 checks the dimensionality of the image and uses a generic model type
 to open the image.
 
-The base class for Datamodels loads the schema from the a file in the
+The base class for Datamodels loads the schema from a file in the
 schemas subdirectory. If the base class is passed a descriptor of an
 already open model, it returns a shallow copy of the already open
 image. This is done to speed the code, as re-opening already open
@@ -56,7 +56,7 @@ determine the file type. This test is in filetype.py.
 
 To write a model back to a file, call the save method on the file. It
 first calls validate_required to check the schema to see if all the
-required fields are present in the model. (More information needed)
+required fields are present in the model. (More information needed here)
 
 Items within a model are accessed as attributes, that is, with dot
 notation. The code which handles getting and setting attributes is
